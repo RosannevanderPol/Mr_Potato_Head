@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()){
             case R.id.checkBox_hat:
-                ImageView hat = (ImageView) findViewById(R.id.image_hat);
+                ImageView hat = (ImageView) findViewById(R.id.imageView_hat);
                 if(checked){
                     hat.setVisibility(View.VISIBLE);
                 }
