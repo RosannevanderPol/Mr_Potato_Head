@@ -27,7 +27,7 @@
             android:textSize="34sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/imageView_body"
             android:background="@drawable/body"
@@ -51,54 +51,53 @@
                 android:layout_height="wrap_content"
                 android:text="@string/eyes"
                 android:id="@+id/checkBox_eyes"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:onClick="selectItem" />
+                android:onClick="selectItem"
+                android:layout_above="@+id/checkBox_nose"
+                android:layout_alignTop="@+id/checkBox_mustache" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nose"
                 android:id="@+id/checkBox_nose"
-                android:layout_below="@+id/checkBox_eyes"
+                android:onClick="selectItem"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:onClick="selectItem"/>
+                android:layout_above="@+id/checkBox_mouth" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/mouth"
                 android:id="@+id/checkBox_mouth"
-                android:layout_below="@+id/checkBox_nose"
+                android:onClick="selectItem"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:onClick="selectItem"/>
+                android:layout_alignParentStart="true" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ears"
                 android:id="@+id/checkBox_ears"
-                android:layout_alignParentTop="true"
+                android:onClick="selectItem"
+                android:layout_above="@+id/checkBox_eyebrows"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/checkBox_mustache"
-                android:layout_alignStart="@+id/checkBox_mustache"
-                android:onClick="selectItem" />
+                android:layout_alignLeft="@+id/checkBox_shoes"
+                android:layout_alignStart="@+id/checkBox_shoes" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/eyebrows"
                 android:id="@+id/checkBox_eyebrows"
-                android:layout_below="@+id/checkBox_ears"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/checkBox_ears"
-                android:layout_alignStart="@+id/checkBox_ears"
-                android:onClick="selectItem" />
+                android:onClick="selectItem"
+                android:layout_above="@+id/checkBox_glasses"
+                android:layout_alignLeft="@+id/checkBox_glasses"
+                android:layout_alignStart="@+id/checkBox_glasses" />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -115,43 +114,42 @@
                 android:layout_height="wrap_content"
                 android:text="@string/shoes"
                 android:id="@+id/checkBox_shoes"
-                android:layout_below="@+id/checkBox_mouth"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:onClick="selectItem" />
+                android:onClick="selectItem"
+                android:layout_above="@+id/checkBox_arms"
+                android:layout_alignLeft="@+id/checkBox_arms"
+                android:layout_alignStart="@+id/checkBox_arms" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/glasses"
                 android:id="@+id/checkBox_glasses"
-                android:layout_below="@+id/checkBox_shoes"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:onClick="selectItem" />
+                android:onClick="selectItem"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/mustache"
                 android:id="@+id/checkBox_mustache"
-                android:layout_below="@+id/checkBox_arms"
-                android:layout_alignRight="@+id/checkBox_arms"
-                android:layout_alignEnd="@+id/checkBox_arms"
-                android:onClick="selectItem" />
+                android:onClick="selectItem"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/checkBox_ears"
+                android:layout_alignLeft="@+id/checkBox_eyebrows"
+                android:layout_alignStart="@+id/checkBox_eyebrows" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hat"
                 android:id="@+id/checkBox_hat"
-                android:layout_below="@+id/checkBox_mustache"
+                android:onClick="selectItem"
+                android:layout_above="@+id/checkBox_mustache"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
                 android:layout_alignLeft="@+id/checkBox_mustache"
-                android:layout_alignStart="@+id/checkBox_mustache"
-                android:onClick="selectItem" />
+                android:layout_alignStart="@+id/checkBox_mustache" />
 
         </RelativeLayout>
 
@@ -243,24 +241,25 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView_shoes"
-            android:background="@drawable/shoes"
-            android:layout_alignBottom="@+id/imageView_body"
+            android:id="@+id/imageView_mustache"
+            android:background="@drawable/mustache"
+            android:contentDescription="@string/mustache"
+            android:visibility="invisible"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:contentDescription="@string/shoes"
-            android:visibility="invisible" />
+            android:layout_alignBottom="@+id/imageView_body" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView_mustache"
-            android:background="@drawable/mustache"
-            android:layout_alignTop="@+id/imageView_body"
+            android:id="@+id/imageView_shoes"
+            android:background="@drawable/shoes"
+            android:contentDescription="@string/shoes"
+            android:visibility="invisible"
+            android:cropToPadding="false"
+            android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:contentDescription="@string/mustache"
-            android:visibility="invisible" />
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 
